@@ -2,7 +2,7 @@
 Main library file to centralize main functions for multiple plugins which will allow better maintaining capabilities.
 
 # Why is it public?
-We need public projects to show other our work 
+We will share our work.
 
 # Pre Alpha
 This is not a final product!
