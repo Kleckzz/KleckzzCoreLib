@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.kleckzz.coresystem.lib</groupId>
+        <artifactId>coresystem</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>coresystem-common</artifactId>
+    <packaging>jar</packaging>
+
+    <name>Coresystem Common</name>
+
+    <distributionManagement>
+        <repository>
+            <id>coresystem-releases</id>
+            <url>https://repo.kleckzz.de/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>coresystem-snapshots</id>
+            <url>https://repo.kleckzz.de/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/**</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                            <!--
+                            <relocations>
+                                <relocation>
+                                    <pattern>io.github.leonardosnt.bungeechannelapi</pattern>
+                                    <shadedPattern>YOUR.PLUGIN.PACKAGE.libs.bungeechannelapi</shadedPattern>
+                                </relocation>
+                            </relocations>
+                            -->
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>de.kleckzz.coresystem.lib</groupId>
+            <artifactId>coresystem-paper</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>de.kleckzz.coresystem.lib</groupId>
+            <artifactId>coresystem-waterfall</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+</project>
