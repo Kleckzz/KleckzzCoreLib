@@ -44,7 +44,7 @@ public class Discord {
     }
 
     /**
-     * Um den bot zu starten
+     * To Start the discord bot
      */
     public void start() {
         try {

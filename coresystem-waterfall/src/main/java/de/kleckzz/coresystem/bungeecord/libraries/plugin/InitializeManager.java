@@ -40,7 +40,7 @@ public class InitializeManager {
     }
 
     /**
-     * Regiter a Event
+     * Register a Event
      * @param plugin Require the ProxyPlugin
      * @param register Require the class of the listener
      */
