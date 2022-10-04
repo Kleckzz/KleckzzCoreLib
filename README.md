@@ -24,7 +24,7 @@ This is not a final product!
         <groupId>de.kleckzz.coresystem.lib</groupId>
         <artifactId>coresystem-waterfall</artifactId>
         <version>1.0-SNAPSHOT</version>
-        <scope>provided</scope>
+           <scope>compile</scope>
     </dependency>
 </dependencies>
 ```
@@ -107,6 +107,12 @@ config.reload();
 
 // To access the configuration
 config.getConfig().get("").toString();
+```
+This is Gson. Did you ever hear about that?
+```
+Gson g = new Gson();
+Student s = g.fromJson(jsonString, Student.class)
+String str = g.toJson(p);
 ```
 
 ## Discord
