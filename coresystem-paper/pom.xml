@@ -167,6 +167,18 @@
             <version>3.3.0-RELEASE</version>
             <scope>provided</scope>
         </dependency>
+        <!-- Discord JDA -->
+        <dependency>
+            <groupId>net.dv8tion</groupId>
+            <artifactId>JDA</artifactId>
+            <version>5.0.0-alpha.18</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>club.minnced</groupId>
+                    <artifactId>opus-java</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
         <!-- Json -->
         <dependency>
             <groupId>com.googlecode.json-simple</groupId>
